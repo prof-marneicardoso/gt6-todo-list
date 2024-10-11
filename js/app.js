@@ -61,11 +61,17 @@ function mostrarEventos() {
     let valorTotal = 0;
 
     listaEventos.forEach(evento => {
-        const item = document.createElement('li');
         valorTotal += evento.valor;
+
+        // const foto = document.createElement('img');
+        // foto.setAttribute('src', './img/icone.png');
+        
+        const item = document.createElement('li');
+        // item.appendChild(foto);
+
         item.textContent = `${evento.nomeEvento}, R$ ${evento.valor}, Total: R$ ${valorTotal}`;
         lista.appendChild(item);
-    });    
+    });
 }
 
 // Chama a function ao carregar a página
