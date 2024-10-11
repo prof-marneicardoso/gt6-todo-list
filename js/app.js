@@ -17,7 +17,8 @@ formCadastro.addEventListener('submit', (evento) => {
 function cadastrarEvento(formCadastro) {
     // Buscando os dados do formulário
     const nomeEvento = formCadastro.nomeEvento.value;
-    const dataEvento = formCadastro.dataEvento.value;
+    // const dataEvento = formCadastro.dataEvento.value;
+    const valor = Number(formCadastro.valor.value);
 
     // Busca os dados do LocalStorage (ou devolve um array vazio)
     const listaEventos = JSON.parse(localStorage.getItem('eventos')) || [];
@@ -37,7 +38,8 @@ function cadastrarEvento(formCadastro) {
         // objeto
         {
             nomeEvento,
-            dataEvento,
+            // dataEvento,
+            valor,
         }
     );
 
@@ -56,10 +58,12 @@ function mostrarEventos() {
 
     const lista = document.getElementById('lista');
     lista.innerHTML = '';
+    let valorTotal = 0;
 
     listaEventos.forEach(evento => {
         const item = document.createElement('li');
-        item.textContent = `${evento.nomeEvento} - ${evento.dataEvento}`;
+        valorTotal += evento.valor;
+        item.textContent = `${evento.nomeEvento}, R$ ${evento.valor}, Total: R$ ${valorTotal}`;
         lista.appendChild(item);
     });    
 }
