@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO List</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/icone.png" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+        <h2>Gerenciador de Eventos</h2>
+
+        <form id="formCadastro">
+            <input
+                type="text"
+                id="nomeEvento"
+                placeholder="Nome do Evento"
+                required>
+            
+            <input
+                type="date"
+                id="dataEvento"
+                required>
+            
+            <button type="submit">
+                Adicionar Evento
+            </button>
+        </form>
+
+        <ul id="lista">
+            <!-- Os eventos serão adicionados aqui usando JavaScript -->
+        </ul>
+    </main>
+</body>
+
+<!-- JS -->
+<script src="./js/app.js"></script>
+
+</html>
